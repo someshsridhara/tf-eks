@@ -1,0 +1,10 @@
+---
+env:
+  AWS_REGION: "ap-southeast-2"
+steps:
+  - label: ":female-scientist::skin-tone-2: Test run..."
+    command:
+      - ".buildkite/cicd_bootstrap.sh"
+    timeout_in_minutes: 20
+    agents:
+      queue: default
