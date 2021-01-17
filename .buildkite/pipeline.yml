@@ -5,12 +5,18 @@ steps:
   - label: ":female-scientist::skin-tone-2: Test run..."
     command:
       - ".buildkite/cicd_bootstrap.sh"
+    plugins:
+      - 'uber-workflow/run-without-clone':
     timeout_in_minutes: 20
   - label: ":female-scientist::skin-tone-2: Terraform init..."
     command:
       - ".buildkite/scripts/terraform-init.sh"
+    plugins:
+      - 'uber-workflow/run-without-clone':
     timeout_in_minutes: 20
   - label: ":female-scientist::skin-tone-2: Run terraform plan..."
     command:
       - ".buildkite/scripts/terraform-plan.sh"
+    plugins:
+      - 'uber-workflow/run-without-clone':
     timeout_in_minutes: 20
