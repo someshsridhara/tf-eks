@@ -14,6 +14,12 @@ steps:
     plugins:
       - 'uber-workflow/run-without-clone':
     timeout_in_minutes: 20
+  - label: ":female-scientist::skin-tone-2: Run terraform refresh..."
+    command:
+      - ".buildkite/scripts/terraform-refresh.sh"
+    plugins:
+      - 'uber-workflow/run-without-clone':
+    timeout_in_minutes: 20
   - label: ":female-scientist::skin-tone-2: Run terraform plan..."
     command:
       - ".buildkite/scripts/terraform-plan.sh"
