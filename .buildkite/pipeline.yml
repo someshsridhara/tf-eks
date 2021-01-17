@@ -8,9 +8,9 @@ steps:
     timeout_in_minutes: 20
     agents:
       queue: default
-  - label: ":female-scientist::skin-tone-2: Source tfenv..."
+  - label: ":female-scientist::skin-tone-2: Terraform init..."
     command:
-      - "source ~/.bash_profile"
+      - "terraform init"
     timeout_in_minutes: 20
     agents:
       queue: default
