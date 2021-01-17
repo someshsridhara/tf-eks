@@ -8,3 +8,9 @@ steps:
     timeout_in_minutes: 20
     agents:
       queue: default
+  - label: ":female-scientist::skin-tone-2: Run terraform plan..."
+    command:
+      - "terraform plan -out=dev.tfplan"
+    timeout_in_minutes: 20
+    agents:
+      queue: default
