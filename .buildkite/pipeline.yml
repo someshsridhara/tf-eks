@@ -14,6 +14,12 @@ steps:
     plugins:
       - 'uber-workflow/run-without-clone':
     timeout_in_minutes: 20
+  - label: ":terraform: Terraform select dev workspace..."
+    command:
+      - ".buildkite/scripts/terraform-workspace.sh"
+    plugins:
+      - 'uber-workflow/run-without-clone':
+    timeout_in_minutes: 20
   - label: ":terraform: Run terraform refresh..."
     command:
       - ".buildkite/scripts/terraform-refresh.sh"
