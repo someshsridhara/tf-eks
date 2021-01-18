@@ -5,49 +5,49 @@ env:
 steps:
   - label: ":terraform: Terraform init..."
     command:
-      - ".buildkite/scripts/terraform-init.sh"
+      - "sh .buildkite/scripts/terraform-init.sh"
     plugins:
       - 'uber-workflow/run-without-clone':
     timeout_in_minutes: 20
   - wait
   - label: ":terraform: Validate Terraform configuration..."
     command:
-      - ".buildkite/scripts/terraform-validate.sh"
+      - "sh .buildkite/scripts/terraform-validate.sh"
     plugins:
       - 'uber-workflow/run-without-clone':
     timeout_in_minutes: 20
   - wait
   - label: ":terraform: Terraform select test workspace..."
     command:
-      - ".buildkite/scripts/terraform-workspace.sh test"
+      - "sh .buildkite/scripts/terraform-workspace.sh test"
     plugins:
       - 'uber-workflow/run-without-clone':
     timeout_in_minutes: 20
   - wait
   - label: ":terraform: Run unit tests..."
     command:
-      - ".buildkite/scripts/terraform-test.sh test"
+      - "sh .buildkite/scripts/terraform-test.sh test"
     plugins:
       - 'uber-workflow/run-without-clone':
     timeout_in_minutes: 60
   - wait
   - label: ":terraform: Terraform select dev workspace..."
     command:
-      - ".buildkite/scripts/terraform-workspace.sh dev"
+      - "sh .buildkite/scripts/terraform-workspace.sh dev"
     plugins:
       - 'uber-workflow/run-without-clone':
     timeout_in_minutes: 20
   - wait
   - label: ":terraform: Run terraform refresh..."
     command:
-      - ".buildkite/scripts/terraform-refresh.sh"
+      - "sh .buildkite/scripts/terraform-refresh.sh"
     plugins:
       - 'uber-workflow/run-without-clone':
     timeout_in_minutes: 20
   - wait
   - label: ":terraform: Run terraform plan..."
     command:
-      - ".buildkite/scripts/terraform-plan.sh"
+      - "sh .buildkite/scripts/terraform-plan.sh"
     plugins:
       - 'uber-workflow/run-without-clone':
     timeout_in_minutes: 20
