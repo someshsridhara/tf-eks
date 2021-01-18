@@ -17,13 +17,13 @@ steps:
       - 'uber-workflow/run-without-clone':
     timeout_in_minutes: 20
   - wait
-  - label: ":terraform: Terraform select test workspace..."
-    command:
-      - ".buildkite/scripts/terraform-workspace.sh test"
-    plugins:
-      - 'uber-workflow/run-without-clone':
-    timeout_in_minutes: 20
-  - wait
+  # - label: ":terraform: Terraform select test workspace..."
+  #   command:
+  #     - ".buildkite/scripts/terraform-workspace.sh test"
+  #   plugins:
+  #     - 'uber-workflow/run-without-clone':
+  #   timeout_in_minutes: 20
+  # - wait
   - label: ":terraform: Run unit tests..."
     command:
       - ".buildkite/scripts/terraform-test.sh test"
