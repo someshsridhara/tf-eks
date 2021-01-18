@@ -1,6 +1,12 @@
-output "aws_route53_record" {
-  description = "The Route 53 entries for the domain."
-  value       = flatten(aws_route53_record.eks_domain_cert_validation_dns.*)
+
+output "eks_cluster_name" {
+  description = "The cluster name created in EKS."
+  value       = module.eks-cluster.cluster_id
+}
+
+output "eks_cluster_version" {
+  description = "The version of the cluster created in EKS."
+  value       = module.eks-cluster.cluster_version
 }
 
 output "oidc_thumbprint" {

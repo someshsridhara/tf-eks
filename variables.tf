@@ -8,6 +8,12 @@ variable "cluster_name" {
   default = "tf-worksample-cluster"
 }
 
+variable "cluster_version" {
+  type        = string
+  description = "EKS cluster version."
+  default = "1.18"
+}
+
 variable "prefix_name" {
   type        = string
   description = "Prefix to be used on each infrastructure object Name created in AWS."
