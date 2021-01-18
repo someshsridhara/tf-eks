@@ -1,2 +1,2 @@
 #!/bin/bash
-terraform workspace select $1
+ terraform workspace select $1
