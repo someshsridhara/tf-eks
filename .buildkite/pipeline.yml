@@ -3,6 +3,7 @@ env:
   AWS_REGION: "ap-southeast-2"
   TEST_AWS_REGION: "ap-southeast-1"
   GO_TEST_TIMEOUT: 60m
+  SKIP_TEST: true
 steps:
   - label: ":terraform: Terraform init..."
     command:
@@ -51,12 +52,13 @@ steps:
       - "sh .buildkite/scripts/terraform-plan.sh"
     plugins:
       - 'uber-workflow/run-without-clone':
-    timeout_in_minutes: 20
+    timeout_in_minutes: 30
   - wait
   - block: "Confirm Apply"
     prompt: "Are you sure we can apply this?"
   - label: ":terraform: Run terraform plan..."
     command:
-      - 'echo "applying"'
+      - "sh .buildkite/scripts/terraform-apply.sh"
     plugins:
       - 'uber-workflow/run-without-clone': 
+    timeout_in_minutes: 60
