@@ -5,7 +5,7 @@ variable "aws_region" {
 variable "cluster_name" {
   type        = string
   description = "EKS cluster name."
-  default = "tf-worksample-cluster"
+  default = "tf-sample-cluster"
 }
 
 variable "cluster_version" {
@@ -17,13 +17,13 @@ variable "cluster_version" {
 variable "prefix_name" {
   type        = string
   description = "Prefix to be used on each infrastructure object Name created in AWS."
-  default = "worksample"
+  default = "sample"
 }
 
 variable "env_tag" {
   type        = string
   description = "Tag to indicate env name."
-  default = "dev"
+  default = "development"
 }
 
 # VPC Variables

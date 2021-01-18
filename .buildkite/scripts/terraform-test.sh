@@ -1,6 +1,8 @@
 #!/bin/bash
  GO_TEST_DIR=${GO_TEST_DIR:-test}
 
+ export AWS_REGION=$TEST_AWS_REGION
+
  echo "Switching to test dir [$GO_TEST_DIR]..."
  cd $GO_TEST_DIR
 

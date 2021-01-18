@@ -1,6 +1,7 @@
 ---
 env:
   AWS_REGION: "ap-southeast-2"
+  TEST_AWS_REGION: "ap-southeast-1"
   GO_TEST_TIMEOUT: 60m
 steps:
   - label: ":terraform: Terraform init..."
@@ -33,7 +34,7 @@ steps:
   - wait
   - label: ":terraform: Terraform select dev workspace..."
     command:
-      - "sh .buildkite/scripts/terraform-workspace.sh dev"
+      - "sh .buildkite/scripts/terraform-workspace.sh development"
     plugins:
       - 'uber-workflow/run-without-clone':
     timeout_in_minutes: 20
