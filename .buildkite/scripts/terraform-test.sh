@@ -5,4 +5,4 @@
  cd $GO_TEST_DIR
 
  echo "Running unit tests..."
- go test -v -timeout $GO_TEST_TIMEOUT
+ go test -v tf_eks_unit_test.go copy.go -timeout=$GO_TEST_TIMEOUT
