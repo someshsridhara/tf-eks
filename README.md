@@ -1,5 +1,7 @@
 # tf-eks
 
+[![Build status](https://badge.buildkite.com/b36569c35263fd02162335b5576d985fae7437500c7db5589d.svg)](https://buildkite.com/someshas-workspace/tf-eks)
+
 > Terraform code to create an EKS cluster and it's dependent infrastructure components
 
 ## Prerequisites
