@@ -39,12 +39,7 @@ func TestTerraformEks(t *testing.T) {
 		logger.Log(t, "Before assertions...")
 		logger.Log(t, "--------------------")
 
-		// clusterName := terraform.Output(t, terraformOptions, "eks_cluster_name")
 		clusterVersion := terraform.Output(t, terraformOptions, "eks_cluster_version")
-
-		// assert.Regexp(t, regexp.MustCompile("^vpce-[0-9a-f]+$"), s3_endpointID)
-		// assert.Regexp(t, regexp.MustCompile("^rtb-[0-9a-f]+$"), private_router)
-		// assert.Regexp(t, regexp.MustCompile("^rtb-[0-9a-f]+$"), dmz_router)
 		assert.Equal(t, "1.18", clusterVersion)
 
 		logger.Log(t, "-----------------")
